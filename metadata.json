@@ -1,0 +1,6 @@
+{
+  "name": "MMH Podcast",
+  "description": "منصة بودكاست مش مجرد حد - تجربة سينمائية تفاعلية تحكي قصصاً ومشاهد إيمانية ملهمة.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Tajawal', 'Cairo', sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    color-scheme: dark;
+    background-color: #000000;
+  }
+
+  /* Sleek Golden Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(9, 9, 11, 0.95);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(245, 158, 11, 0.3);
+    border-radius: 9999px;
+    border: 1px solid rgba(245, 158, 11, 0.15);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(245, 158, 11, 0.6);
+  }
+
+  /* Global Focus Ring Consistency */
+  *:focus-visible {
+    outline: 2px solid #f59e0b !important;
+    outline-offset: 2px !important;
+    border-radius: 8px;
+  }
+}
+
+.font-amiri {
+  font-family: 'Amiri', serif;
+}
+
+.font-cairo {
+  font-family: 'Cairo', sans-serif;
+}
+
+.font-tajawal {
+  font-family: 'Tajawal', sans-serif;
+}
+
+/* Storybook text readability drop-shadows */
+.text-story-title {
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.85), 0 2px 6px rgba(0, 0, 0, 0.95), 0 0 40px rgba(234, 179, 8, 0.3);
+}
+
+.text-story-verse {
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.9), 0 2px 4px rgba(0, 0, 0, 0.95);
+}
+
+.text-story-subtitle {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85), 0 1px 3px rgba(0, 0, 0, 0.95);
+}
+
+/* Glassy minimal overlay backdrops */
+.storybook-overlay-gradient {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.35) 100%);
+}
+
+/* Soft ambient glow */
+@keyframes ambientGlow {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(1.03); }
+}
+
+.animate-ambient-glow {
+  animation: ambientGlow 8s ease-in-out infinite;
+}
+
+/* Reusable Glass Cards and Borders */
+.glass-panel {
+  background: rgba(24, 24, 27, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.glass-panel-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(245, 158, 11, 0.45);
+  box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.25);
+}
+
+/* Golden Skeleton Shimmer Animation */
+@keyframes goldenShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(24, 24, 27, 0.9) 0%,
+    rgba(39, 39, 42, 0.95) 25%,
+    rgba(245, 158, 11, 0.18) 50%,
+    rgba(39, 39, 42, 0.95) 75%,
+    rgba(24, 24, 27, 0.9) 100%
+  );
+  background-size: 200% 100%;
+  animation: goldenShimmer 2s ease-in-out infinite;
+}
+
+
