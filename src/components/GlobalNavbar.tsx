@@ -252,7 +252,7 @@ export const GlobalNavbar: React.FC<GlobalNavbarProps> = ({
             <button
               type="button"
               onClick={() => setIsNotificationCenterOpen(true)}
-              className="relative w-8 h-8 rounded-full flex items-center justify-center bg-white/5 hover:bg-white/15 border border-white/10 hover:border-amber-400/30 text-amber-200 transition-all duration-200 cursor-pointer active:scale-95 group"
+              className="relative w-9 h-9 sm:w-8 sm:h-8 min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 rounded-full flex items-center justify-center bg-white/5 hover:bg-white/15 border border-white/10 hover:border-amber-400/30 text-amber-200 transition-all duration-200 cursor-pointer active:scale-95 group"
               title="مركز الإشعارات • Notification Center"
             >
               <Bell className="w-3.5 h-3.5 text-amber-300 group-hover:scale-110 transition-transform" />
@@ -303,7 +303,7 @@ export const GlobalNavbar: React.FC<GlobalNavbarProps> = ({
             <button
               type="button"
               onClick={() => onNavigate('profile')}
-              className={`w-8 h-8 rounded-full flex items-center justify-center border transition-all duration-200 cursor-pointer active:scale-95 group ${
+              className={`w-9 h-9 sm:w-8 sm:h-8 min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 rounded-full flex items-center justify-center border transition-all duration-200 cursor-pointer active:scale-95 group ${
                 activeSection === 'profile'
                   ? 'bg-gradient-to-tr from-amber-500 via-amber-400 to-amber-300 text-zinc-950 border-amber-400 shadow-[0_0_12px_rgba(251,191,36,0.6)] scale-105'
                   : 'bg-white/5 hover:bg-white/15 border-white/10 text-amber-300 hover:border-amber-400/40'
@@ -317,7 +317,7 @@ export const GlobalNavbar: React.FC<GlobalNavbarProps> = ({
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden w-8 h-8 rounded-full flex items-center justify-center bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/30 text-amber-300 transition-all duration-200 cursor-pointer active:scale-95"
+              className="md:hidden w-9 h-9 sm:w-8 sm:h-8 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/30 text-amber-300 transition-all duration-200 cursor-pointer active:scale-95"
               title="القائمة • Menu"
             >
               {isOpen ? <X className="w-4 h-4 text-amber-400" /> : <Menu className="w-4 h-4 text-amber-400" />}
@@ -330,7 +330,7 @@ export const GlobalNavbar: React.FC<GlobalNavbarProps> = ({
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-2xl flex flex-col justify-between p-6 md:p-12 dir-rtl overflow-y-auto select-none pointer-events-auto"
+            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-2xl flex flex-col justify-between p-6 md:p-12 dir-rtl overflow-y-auto select-none pointer-events-auto max-w-full overflow-x-hidden"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -339,8 +339,13 @@ export const GlobalNavbar: React.FC<GlobalNavbarProps> = ({
             {/* Drawer Header */}
             <div className="flex items-center justify-between pb-6 border-b border-amber-500/20 max-w-5xl mx-auto w-full">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-400 to-amber-300 flex items-center justify-center text-amber-950 font-black text-xl shadow-[0_0_15px_rgba(251,191,36,0.6)]">
-                  ✝
+                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-500/20 via-amber-400/20 to-amber-300/20 flex items-center justify-center border border-amber-300/40 shadow-[0_0_12px_rgba(251,191,36,0.4)] overflow-hidden p-0.5 shrink-0">
+                  <img
+                    src="/assets/logo/logo.png"
+                    alt="بودكاست مش مجرد حد"
+                    className="w-full h-full object-cover rounded-full"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
                 <div>
                   <h2 className="text-xl md:text-2xl font-cairo font-black text-amber-100">
@@ -355,7 +360,7 @@ export const GlobalNavbar: React.FC<GlobalNavbarProps> = ({
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
-                className="p-2.5 rounded-full bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 transition-all cursor-pointer"
+                className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 transition-all cursor-pointer flex items-center justify-center shrink-0"
               >
                 <X className="w-6 h-6" />
               </button>

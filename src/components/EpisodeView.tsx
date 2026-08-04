@@ -127,7 +127,7 @@ export const EpisodeView: React.FC<EpisodeViewProps> = ({ scene, onClose, onStar
 
   return (
     <motion.div
-      className="fixed inset-0 z-50 overflow-y-auto bg-black/95 backdrop-blur-2xl text-white dir-rtl select-none"
+      className="fixed inset-0 z-50 overflow-y-auto bg-black/95 backdrop-blur-2xl text-white dir-rtl select-none w-full max-w-full overflow-x-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -135,7 +135,7 @@ export const EpisodeView: React.FC<EpisodeViewProps> = ({ scene, onClose, onStar
     >
       {/* Sticky Header Nav Bar */}
       <motion.div
-        className="sticky top-0 z-30 bg-black/85 backdrop-blur-xl border-b border-amber-500/20 px-4 py-3.5 md:px-8 flex items-center justify-between"
+        className="sticky top-0 z-30 bg-black/85 backdrop-blur-xl border-b border-amber-500/20 px-4 py-3.5 md:px-8 flex items-center justify-between gap-3"
         initial={{ opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -16 }}
@@ -144,7 +144,7 @@ export const EpisodeView: React.FC<EpisodeViewProps> = ({ scene, onClose, onStar
         <button
           type="button"
           onClick={onClose}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full font-tajawal font-bold text-xs md:text-sm text-amber-200 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 transition-all duration-300 cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
+          className="inline-flex items-center gap-2 px-4 py-2.5 min-h-[44px] rounded-full font-tajawal font-bold text-xs md:text-sm text-amber-200 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 transition-all duration-300 cursor-pointer hover:scale-[1.02] active:scale-[0.98] shrink-0"
         >
           <ArrowRight className="w-4 h-4 text-amber-400" />
           <span>العودة إلى الرحلة • Back</span>

@@ -66,7 +66,7 @@ export const MinimalOverlay: React.FC<MinimalOverlayProps> = ({
                 <button
                   type="button"
                   onClick={onWatchEpisode}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-2 rounded-full font-cairo font-bold text-xs text-amber-950 bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 hover:from-amber-200 hover:to-amber-400 transition-all duration-300 ease-out hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_20px_rgba(251,191,36,0.45)] hover:shadow-[0_0_25px_rgba(251,191,36,0.65)] cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 min-h-[44px] rounded-full font-cairo font-bold text-xs md:text-sm text-amber-950 bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 hover:from-amber-200 hover:to-amber-400 transition-all duration-300 ease-out hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_20px_rgba(251,191,36,0.45)] hover:shadow-[0_0_25px_rgba(251,191,36,0.65)] cursor-pointer"
                 >
                   <Play className="w-3.5 h-3.5 fill-amber-950 text-amber-950" />
                   <span>شاهد الحلقة</span>
@@ -76,7 +76,7 @@ export const MinimalOverlay: React.FC<MinimalOverlayProps> = ({
                 <button
                   type="button"
                   onClick={onStartActivities}
-                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full font-cairo font-semibold text-xs text-amber-200/90 bg-white/5 hover:bg-white/10 border border-amber-500/25 hover:border-amber-400/40 transition-all duration-300 ease-out hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 min-h-[44px] rounded-full font-cairo font-semibold text-xs md:text-sm text-amber-200/90 bg-white/5 hover:bg-white/10 border border-amber-500/25 hover:border-amber-400/40 transition-all duration-300 ease-out hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
                 >
                   <Target className="w-3.5 h-3.5 text-amber-400/80" />
                   <span>الأنشطة</span>
@@ -120,7 +120,7 @@ export const MinimalOverlay: React.FC<MinimalOverlayProps> = ({
       <AnimatePresence>
         {isVisible && (
           <motion.div
-            className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 pointer-events-auto"
+            className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1 pointer-events-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.9 }}
             exit={{ opacity: 0, scale: 0.9, y: 8 }}
@@ -131,12 +131,16 @@ export const MinimalOverlay: React.FC<MinimalOverlayProps> = ({
                 key={idx}
                 onClick={() => onSelectScene?.(idx)}
                 aria-label={`الانتقال إلى الحلقة ${idx + 1}`}
-                className={`transition-all duration-500 ease-out rounded-full cursor-pointer ${
-                  idx === currentIndex
-                    ? 'w-7 h-2 bg-amber-400 shadow-[0_0_12px_rgba(251,191,36,0.8)]'
-                    : 'w-2 h-2 bg-white/40 hover:bg-white/80 hover:scale-125'
-                }`}
-              />
+                className="w-8 h-8 min-w-[32px] min-h-[32px] flex items-center justify-center cursor-pointer group"
+              >
+                <span
+                  className={`transition-all duration-500 ease-out rounded-full block ${
+                    idx === currentIndex
+                      ? 'w-7 h-2 bg-amber-400 shadow-[0_0_12px_rgba(251,191,36,0.8)]'
+                      : 'w-2 h-2 bg-white/40 group-hover:bg-white/80 group-hover:scale-125'
+                  }`}
+                />
+              </button>
             ))}
           </motion.div>
         )}

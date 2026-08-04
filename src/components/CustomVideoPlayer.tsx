@@ -302,7 +302,7 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
                 <button
                   type="button"
                   onClick={togglePlay}
-                  className="p-1.5 md:p-2 rounded-full hover:bg-white/15 text-amber-300 hover:text-amber-200 transition-colors cursor-pointer"
+                  className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full hover:bg-white/15 text-amber-300 hover:text-amber-200 transition-colors cursor-pointer flex items-center justify-center"
                   aria-label={isPlaying ? 'Pause' : 'Play'}
                 >
                   {isPlaying ? (
@@ -316,7 +316,7 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
                 <button
                   type="button"
                   onClick={() => skipTime(-10)}
-                  className="p-1.5 rounded-full hover:bg-white/15 text-zinc-300 hover:text-white transition-colors cursor-pointer hidden sm:block"
+                  className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full hover:bg-white/15 text-zinc-300 hover:text-white transition-colors cursor-pointer hidden sm:flex items-center justify-center"
                   aria-label="Rewind 10 seconds"
                   title="10 ثوانٍ للخلف"
                 >
@@ -327,7 +327,7 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
                 <button
                   type="button"
                   onClick={() => skipTime(10)}
-                  className="p-1.5 rounded-full hover:bg-white/15 text-zinc-300 hover:text-white transition-colors cursor-pointer hidden sm:block"
+                  className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full hover:bg-white/15 text-zinc-300 hover:text-white transition-colors cursor-pointer hidden sm:flex items-center justify-center"
                   aria-label="Forward 10 seconds"
                   title="10 ثوانٍ للأمام"
                 >
@@ -343,7 +343,7 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
                   <button
                     type="button"
                     onClick={toggleMute}
-                    className="p-1.5 rounded-full hover:bg-white/15 text-zinc-300 hover:text-amber-300 transition-colors cursor-pointer"
+                    className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full hover:bg-white/15 text-zinc-300 hover:text-amber-300 transition-colors cursor-pointer flex items-center justify-center"
                     aria-label="Toggle Mute"
                   >
                     {isMuted || volume === 0 ? (
@@ -394,7 +394,7 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
                   <button
                     type="button"
                     onClick={() => setShowSpeedMenu(!showSpeedMenu)}
-                    className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/10 hover:bg-amber-500/20 text-amber-300 text-xs font-semibold border border-amber-500/20 transition-all cursor-pointer"
+                    className="flex items-center gap-1 px-3 py-2 min-h-[44px] min-w-[44px] rounded-full bg-white/10 hover:bg-amber-500/20 text-amber-300 text-xs font-semibold border border-amber-500/20 transition-all cursor-pointer justify-center"
                     aria-label="Playback Speed Settings"
                   >
                     <Settings className="w-3.5 h-3.5" />
@@ -419,7 +419,7 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
                             key={speed}
                             type="button"
                             onClick={() => handleSpeedChange(speed)}
-                            className={`w-full px-3 py-1.5 text-xs text-left flex items-center justify-between hover:bg-amber-500/20 transition-colors cursor-pointer ${
+                            className={`w-full px-3 py-2 text-xs text-left flex items-center justify-between hover:bg-amber-500/20 transition-colors cursor-pointer min-h-[40px] ${
                               playbackSpeed === speed
                                 ? 'text-amber-300 font-bold bg-amber-500/10'
                                 : 'text-zinc-300'
@@ -440,7 +440,7 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
                 <button
                   type="button"
                   onClick={toggleFullscreen}
-                  className="p-1.5 rounded-full hover:bg-white/15 text-zinc-300 hover:text-amber-300 transition-colors cursor-pointer"
+                  className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full hover:bg-white/15 text-zinc-300 hover:text-amber-300 transition-colors cursor-pointer flex items-center justify-center"
                   aria-label={isFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen'}
                 >
                   {isFullscreen ? (
